@@ -16,6 +16,6 @@ jobs:
   editorconfig:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: editorconfig-checker/action-editorconfig-checker@v2
       - run: editorconfig-checker
