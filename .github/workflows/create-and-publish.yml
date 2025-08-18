@@ -14,7 +14,7 @@ on:   # yamllint disable-line rule:truthy
 # Docker image that this workflow builds.
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+  IMAGE_NAME: apache-php
 
 # There is a single job in this workflow.
 # It's configured to run on the latest available version of Ubuntu.
