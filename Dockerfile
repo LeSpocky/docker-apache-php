@@ -7,4 +7,4 @@ RUN a2enmod rewrite
 LABEL org.opencontainers.image.source=https://github.com/LeSpocky/docker-apache-php
 LABEL org.opencontainers.image.description="customized docker php image"
 LABEL org.opencontainers.image.licenses=MIT
-LABEL org.opencontainers.image.title=apache-php
+LABEL org.opencontainers.image.title=lespocky/apache-php
