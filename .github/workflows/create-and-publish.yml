@@ -7,7 +7,13 @@ name: Create and publish a Docker image
 # branch called `release`.
 on:   # yamllint disable-line rule:truthy
   push:
-    branches: ['release']
+    branches:
+      - 'release'   # TODO replace with 'main' when initial development is done
+    tags:
+      - 'v*'
+  pull_request:
+    branches:
+      - 'main'
 
 # Defines two custom environment variables for the workflow.
 # These are used for the Container registry domain, and a name for the
