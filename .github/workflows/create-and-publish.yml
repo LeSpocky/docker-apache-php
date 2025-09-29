@@ -62,6 +62,15 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            # v1.2.3
+            type=semver,pattern={{version}}
+            # v1.2
+            type=semver,pattern={{major}}.{{minor}}
+            # v1, disabled if major zero
+            type=semver,pattern={{major}},enable=${{ !startsWith(github.ref, 'refs/tags/v0.') }}
+            # set latest tag for default branch
+            type=raw,value=latest,enable={{is_default_branch}}
 
       # This step uses the `docker/build-push-action` action to build
       # the image, based on your repository's `Dockerfile`.
