@@ -79,11 +79,17 @@ jobs:
             # always create an image with the git sha, as fallback if none of the above applies
             type=sha
 
+      # Use the Git commit timestamp for reproducible builds
+      - name: Get Git commit timestamps
+        run: echo "TIMESTAMP=$(git log -1 --pretty=%ct)" >> $GITHUB_ENV
+
       # Run checks
       - name: Validate build configuration
         uses: docker/build-push-action@v6
         with:
           call: check
+        env:
+          SOURCE_DATE_EPOCH: ${{ env.TIMESTAMP }}
 
       # This step uses the `docker/build-push-action` action to build
       # the image, based on your repository's `Dockerfile`.
@@ -103,6 +109,8 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+        env:
+          SOURCE_DATE_EPOCH: ${{ env.TIMESTAMP }}
 
       # This step generates an artifact attestation for the image, which
       # is an unforgeable statement about where and how it was built.
