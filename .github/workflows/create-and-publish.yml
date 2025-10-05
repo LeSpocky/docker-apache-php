@@ -79,6 +79,12 @@ jobs:
             # always create an image with the git sha, as fallback if none of the above applies
             type=sha
 
+      # Run checks
+      - name: Validate build configuration
+        uses: docker/build-push-action@v6
+        with:
+          call: check
+
       # This step uses the `docker/build-push-action` action to build
       # the image, based on your repository's `Dockerfile`.
       # If the build succeeds, it pushes the image to GitHub Packages.
