@@ -27,7 +27,15 @@ This enables some Apache modules not enabled in the php image by default.
 
 ## Install
 
-Pull the image from … *(tbd)*
+Docker images are built by GitHub CI and pushed to ghcr.io so you can
+pull the images like this:
+
+```
+docker pull ghcr.io/lespocky/apache-php:latest
+```
+
+Semantic versioning like tags are created for release versions.
+So you can pull version *1.2.3* or *1.2* or *1* as you like it.
 
 ## Usage
 
