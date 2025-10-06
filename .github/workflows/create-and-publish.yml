@@ -4,7 +4,7 @@
 name: Create and publish a Docker image
 
 # Configures this workflow to run every time a change is pushed to the
-# branch called `release`.
+# branch called `main`, on pull-requests, and on certain tags.
 on:   # yamllint disable-line rule:truthy
   push:
     branches:
