@@ -1,0 +1,3 @@
+// SPDX-FileCopyrightText: 2025 Alexander Dahl <post@lespocky.de>
+// SPDX-License-Identifier: CC0-1.0
+export default { extends: ['@commitlint/config-conventional'] };
