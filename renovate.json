@@ -15,11 +15,12 @@
       "automerge": true
     }
   ],
-  "regexManagers": [
+  "customManagers": [
     {
+      "customType": "regex",
       "description": "Update semantic-release version used by npx",
-      "fileMatch": [
-        "^\\.github/workflows/[^/]+\\.ya?ml$"
+      "managerFilePatterns": [
+        "/^\\.github/workflows/[^/]+\\.ya?ml$/"
       ],
       "matchStrings": [
         "\\srun: npx semantic-release@(?<currentValue>.*?)\\s"
