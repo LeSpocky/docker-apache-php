@@ -4,8 +4,15 @@
 ---
 name: Check commit messages for Conventional Commits format
 
-# yamllint disable-line rule:truthy
-on: [push, pull_request]
+# Configures this workflow to run every time a change is pushed to the
+# branch called `main`, and on pull-requests to main.
+on:   # yamllint disable-line rule:truthy
+  push:
+    branches:
+      - 'main'
+  pull_request:
+    branches:
+      - 'main'
 
 permissions:
   contents: read
