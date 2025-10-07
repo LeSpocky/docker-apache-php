@@ -3,6 +3,7 @@
 
 FROM php:8.4.13-apache
 RUN a2enmod rewrite
+RUN docker-php-ext-install mysqli
 
 LABEL org.opencontainers.image.source=https://github.com/LeSpocky/docker-apache-php
 LABEL org.opencontainers.image.description="customized docker php image"
