@@ -5,6 +5,7 @@
     ":semanticCommits"
   ],
   "configMigration": true,
+  "semanticCommitScope": "deps",
   "packageRules": [
     {
       "description": "Automerge non-major updates",
@@ -13,6 +14,28 @@
         "patch"
       ],
       "automerge": true
+    },
+    {
+      "description": "set commit type for ci deps updates",
+      "matchCategories": "ci",
+      "semanticCommitType": "ci"
+    },
+    {
+      "description": "set default commit type for docker deps updates",
+      "matchCategories": "docker",
+      "semanticCommitType": "fix"
+    },
+    {
+      "description": "set commit type for minor docker deps updates",
+      "matchCategories": "docker",
+      "matchUpdateTypes": ["minor"],
+      "semanticCommitType": "feat"
+    },
+    {
+      "description": "set commit type for major docker deps updates",
+      "matchCategories": "docker",
+      "matchUpdateTypes": ["major"],
+      "commitMessagePrefix": "feat(deps)!:"
     }
   ],
   "customManagers": [
