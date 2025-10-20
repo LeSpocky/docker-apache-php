@@ -83,7 +83,7 @@ jobs:
 
       # Use the Git commit timestamp for reproducible builds
       - name: Get Git commit timestamps
-        run: echo "TIMESTAMP=$(git log -1 --pretty=%ct)" >> $GITHUB_ENV
+        run: echo "TIMESTAMP=$(git log -1 --pretty=%ct)" >> "${GITHUB_ENV}"
 
       # Run checks
       - name: Validate build configuration
