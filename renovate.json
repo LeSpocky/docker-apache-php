@@ -10,7 +10,9 @@
     {
       "description": "Automerge non-major updates",
       "matchUpdateTypes": [ "minor", "patch", "digest" ],
-      "automerge": true
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "merge-commit"
     },
     {
       "description": "set commit type for ci deps updates",
