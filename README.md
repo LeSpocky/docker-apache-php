@@ -23,7 +23,17 @@ image](https://hub.docker.com/_/php), extended to be used with WordPress.
 ## Background
 
 The official php Docker image is not suitable for certain use cases as-is.
-This enables some Apache modules not enabled in the php image by default.
+This enables some Apache modules and PHP extensions not present in the
+php-apache Docker image by default.
+
+One goal of this project is to automate the whole build, test, and
+release process as far as possible.
+Updates on the Docker base image are recognized by Renovate Bot.
+All updates except for major PHP updates should automatically trigger a
+new release build.
+
+This project follows semantic versioning, although the version numbers
+do not correspond with the PHP version this is based on.
 
 ## Install
 
@@ -47,6 +57,17 @@ docker build .
 
 For further documentation on how to use the image, see
 [php Docker image](https://hub.docker.com/_/php).
+
+## Modules and Extensions
+
+The following Apache modules are enabled additionally:
+
+- rewrite
+
+The following PHP extensions are installed additionally:
+
+- gd
+- mysqli
 
 ## Contributing
 
