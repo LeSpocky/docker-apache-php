@@ -15,6 +15,10 @@
       "automergeStrategy": "merge-commit"
     },
     {
+      "matchDatasources": [ "docker" ],
+      "minimumReleaseAge": "4 hours"
+    },
+    {
       "description": "set commit type for ci deps updates",
       "matchCategories": "ci",
       "semanticCommitType": "ci"
