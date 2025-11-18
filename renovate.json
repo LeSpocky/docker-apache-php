@@ -16,6 +16,8 @@
     },
     {
       "matchDatasources": [ "docker" ],
+      "matchPackageNames": [ "!/\\./" ],
+      "matchUpdateTypes": [ "!digest" ],
       "minimumReleaseAge": "4 hours"
     },
     {
