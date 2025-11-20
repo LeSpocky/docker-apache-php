@@ -19,7 +19,7 @@ jobs:
   actionlint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Check workflow files
         uses: docker://rhysd/actionlint:latest
         with:
@@ -28,21 +28,21 @@ jobs:
   editorconfig:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: editorconfig-checker/action-editorconfig-checker@v2
       - run: editorconfig-checker
 
   hadolint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: hadolint/hadolint-action@v3.3.0
 
   reuse:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: REUSE Compliance Check
         uses: fsfe/reuse-action@v6
