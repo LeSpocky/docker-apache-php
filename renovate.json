@@ -31,15 +31,9 @@
       "semanticCommitType": "fix"
     },
     {
-      "description": "set commit type for minor docker deps updates",
-      "matchCategories": "docker",
-      "matchUpdateTypes": ["minor"],
-      "semanticCommitType": "feat"
-    },
-    {
-      "description": "set commit type for major docker deps updates",
-      "matchCategories": "docker",
-      "matchUpdateTypes": ["major"],
+      "description": "set commit type for minor and major php deps updates",
+      "matchDepNames": ["php"],
+      "matchUpdateTypes": ["minor", "major"],
       "commitMessagePrefix": "feat(deps)!:"
     }
   ],
