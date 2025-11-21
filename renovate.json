@@ -8,8 +8,8 @@
   "semanticCommitScope": "deps",
   "packageRules": [
     {
-      "description": "Automerge non-major updates",
-      "matchUpdateTypes": [ "minor", "patch", "digest" ],
+      "description": "Automerge non-breaking updates",
+      "matchUpdateTypes": [ "patch", "digest" ],
       "automerge": true,
       "automergeType": "pr",
       "automergeStrategy": "merge-commit"
@@ -31,16 +31,16 @@
       "semanticCommitType": "fix"
     },
     {
-      "description": "set commit type for minor docker deps updates",
-      "matchCategories": "docker",
-      "matchUpdateTypes": ["minor"],
-      "semanticCommitType": "feat"
+      "description": "set commit type for minor and major php deps updates",
+      "matchDepNames": ["php"],
+      "matchUpdateTypes": ["minor", "major"],
+      "commitMessagePrefix": "feat(deps)!:"
     },
     {
-      "description": "set commit type for major docker deps updates",
-      "matchCategories": "docker",
-      "matchUpdateTypes": ["major"],
-      "commitMessagePrefix": "feat(deps)!:"
+      "description": "separate PHP releases into multiple PRs",
+      "matchDepNames": ["php"],
+      "separateMinorPatch": true,
+      "separateMultipleMinor": true
     }
   ],
   "customManagers": [
