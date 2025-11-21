@@ -35,6 +35,12 @@
       "matchDepNames": ["php"],
       "matchUpdateTypes": ["minor", "major"],
       "commitMessagePrefix": "feat(deps)!:"
+    },
+    {
+      "description": "separate PHP releases into multiple PRs",
+      "matchDepNames": ["php"],
+      "separateMinorPatch": true,
+      "separateMultipleMinor": true
     }
   ],
   "customManagers": [
