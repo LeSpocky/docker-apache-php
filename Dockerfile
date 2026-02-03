@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2025 Alexander Dahl <post@lespocky.de>
 # SPDX-License-Identifier: MIT
 
-FROM php:8.5.2-apache@sha256:33ee34a05c6a4a2b6cddc798e439f34c7784e7c44c0d8da0e92317e908e93bc7
+FROM php:8.5.2-apache@sha256:ad5a8fa1327c7b7e4f80526447f870c4b53e3b7513000174df7bbe982bd5d9b8
 
 # enable Apache2 module
 RUN a2enmod rewrite
